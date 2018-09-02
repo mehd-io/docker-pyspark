@@ -19,6 +19,7 @@ RUN pip install ipython
 RUN apk update && \
     apk add curl && \
     apk add bash && \
+    apk add build-base && \
     apk add wget
 
 # HADOOP
@@ -39,7 +40,7 @@ ENV SPARK_VERSION 2.3.1
 ENV SPARK_PACKAGE spark-$SPARK_VERSION-bin-without-hadoop
 ENV SPARK_HOME /usr/spark-$SPARK_VERSION
 ENV PYSPARK_PYTHON python3
-ENV PYSPARK_DRIVER_PYTHON ipython
+ENV PYSPARK_DRIVER_PYTHON python3
 ENV PATH $PATH:$SPARK_HOME/bin
 RUN ln -s /usr/bin/python3.5 /usr/bin/python
 RUN wget http://apache.mirror.iphh.net/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION:0:3}.tgz \
