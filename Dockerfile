@@ -20,7 +20,8 @@ RUN apk update && \
     apk add curl && \
     apk add bash && \
     apk add build-base && \
-    apk add wget
+    apk add wget \
+    apk add libc6-compat
 
 # HADOOP
 
