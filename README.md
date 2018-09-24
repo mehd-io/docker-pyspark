@@ -10,5 +10,5 @@ This image runs :
 # How to use it
 Replace /my/local/path/ with your local path to have persistent volume mapped.
 ```
-docker run -it -d -v /my/local/path/:/home --name pyspark -p 4040:4040 mehdio/docker-pyspark
+docker run -it -d -v /my/local/path/:/home --name pyspark -p 4040:4040 mehdio/pyspark
 ```
